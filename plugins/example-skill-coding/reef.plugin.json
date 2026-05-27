@@ -1,0 +1,16 @@
+{
+  "id": "com.example.reef-skill-coding",
+  "manifest_version": "2",
+  "version": "1.0.0",
+  "name": "Coding style skill",
+  "description": "Skill with inline content plus a SKILL.md entry file merged at load time.",
+  "license": "MIT",
+  "skills": [
+    {
+      "name": "Coding assistant",
+      "description": "Follows repo conventions and keeps diffs minimal.",
+      "content": "When writing or editing code, read surrounding files first and preserve the project's patterns.",
+      "entry": "SKILL.md"
+    }
+  ]
+}

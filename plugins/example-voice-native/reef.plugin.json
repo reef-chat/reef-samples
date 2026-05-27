@@ -1,0 +1,17 @@
+{
+  "id": "com.example.reef-voice-native",
+  "manifest_version": "2",
+  "version": "1.0.0",
+  "name": "Native TTS voice",
+  "description": "On-device voice profile using the OS text-to-speech engine.",
+  "license": "MIT",
+  "voice_profiles": [
+    {
+      "display_name": "Device default",
+      "provider": "native",
+      "tts_rate": 1.0,
+      "tts_pitch": 1.0,
+      "notes": "Uses the OS-provided TTS voice. Free, offline, no API key."
+    }
+  ]
+}

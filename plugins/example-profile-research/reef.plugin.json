@@ -1,0 +1,29 @@
+{
+  "id": "com.example.reef-profile-research",
+  "manifest_version": "2",
+  "version": "1.0.0",
+  "name": "Research assistant profile",
+  "description": "OpenAI-compatible research assistant preset. No API key shipped — fill in on import.",
+  "license": "MIT",
+  "profiles": [
+    {
+      "name": "Research assistant",
+      "api_settings": {
+        "api_scheme": "openai",
+        "api_url": "https://api.openai.com/v1",
+        "api_key": ""
+      },
+      "model": {
+        "name": "gpt-4o",
+        "system_prompt": "You are a research assistant. Cite sources, prefer primary literature, flag uncertainty, and never fabricate data. Use tools when math, freshness, or external data is involved."
+      },
+      "memory": {
+        "embeddings": {
+          "model": "text-embedding-3-small",
+          "dimension": 1536
+        },
+        "knowledge_graph_indexing": "background"
+      }
+    }
+  ]
+}

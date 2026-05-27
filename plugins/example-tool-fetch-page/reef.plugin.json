@@ -1,0 +1,25 @@
+{
+  "id": "com.example.reef-tool-fetch-page",
+  "manifest_version": "2",
+  "version": "0.1.0",
+  "name": "Fetch page text",
+  "description": "Dynamic tool that GETs a URL and returns truncated plain text.",
+  "license": "MIT",
+  "dynamic_tools": [
+    {
+      "name": "fetch_url_text",
+      "description": "GET a URL and return the response body as plain text (truncated to 200 KB).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "url": { "type": "string", "description": "Absolute https URL" }
+        },
+        "required": ["url"]
+      },
+      "body": "const res = await fetch(args.url, { redirect: 'follow' });\nif (!res.ok) return { ok: false, status: res.status };\nconst text = (await res.text()).slice(0, 200 * 1024);\nreturn { ok: true, status: res.status, text };"
+    }
+  ],
+  "declared_capabilities": {
+    "network_domains": ["*"]
+  }
+}

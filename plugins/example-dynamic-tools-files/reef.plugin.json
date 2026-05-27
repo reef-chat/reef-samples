@@ -1,0 +1,22 @@
+{
+  "id": "com.example.reef-dynamic-files",
+  "manifest_version": "2",
+  "version": "1.0.0",
+  "name": "File-backed dynamic tool",
+  "description": "Dynamic tool body loaded from tools/slugify.js in the plugin archive.",
+  "license": "MIT",
+  "dynamic_tools": [
+    {
+      "name": "slugify_text",
+      "description": "Convert text to a lowercase hyphenated slug.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "text": { "type": "string", "description": "Source text" }
+        },
+        "required": ["text"]
+      },
+      "entry": "tools/slugify.js"
+    }
+  ]
+}

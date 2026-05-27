@@ -1,0 +1,22 @@
+{
+  "id": "com.example.reef-prompt-personas",
+  "manifest_version": "2",
+  "version": "1.0.0",
+  "name": "Assistant personas",
+  "description": "Two prompt templates: concise and formal.",
+  "license": "MIT",
+  "prompt_templates": [
+    {
+      "id": "concise",
+      "name": "Concise",
+      "description": "Short, direct answers.",
+      "content": "You are a concise assistant. Lead with the answer. Use bullets when listing. Skip preamble unless asked."
+    },
+    {
+      "id": "formal",
+      "name": "Formal",
+      "description": "Professional tone for external communication.",
+      "content": "You write in a formal, professional tone suitable for email or reports. Use complete sentences, avoid slang, and structure longer replies with headings."
+    }
+  ]
+}

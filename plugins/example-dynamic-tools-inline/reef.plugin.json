@@ -1,0 +1,48 @@
+{
+  "id": "com.example.reef-dynamic-inline",
+  "manifest_version": "2",
+  "version": "1.0.0",
+  "name": "Inline dynamic tools",
+  "description": "Sandboxed JS tools with inline bodies (no network).",
+  "license": "MIT",
+  "dynamic_tools": [
+    {
+      "name": "json_pretty_print",
+      "description": "Pretty-print a JSON string.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "text": { "type": "string", "description": "JSON text to format" }
+        },
+        "required": ["text"]
+      },
+      "body": "const parsed = JSON.parse(args.text);\nreturn { ok: true, formatted: JSON.stringify(parsed, null, 2) };"
+    },
+    {
+      "name": "word_count",
+      "description": "Count words in plain text.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "text": { "type": "string", "description": "Plain text" }
+        },
+        "required": ["text"]
+      },
+      "body": "const words = String(args.text).trim().split(/\\s+/).filter(Boolean);\nreturn { ok: true, count: words.length, words };"
+    },
+    {
+      "name": "clamp_number",
+      "description": "Clamp a number between min and max.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "value": { "type": "number" },
+          "min": { "type": "number" },
+          "max": { "type": "number" }
+        },
+        "required": ["value", "min", "max"]
+      },
+      "body": "const v = Math.min(args.max, Math.max(args.min, args.value));\nreturn { ok: true, value: v };"
+    }
+  ]
+}

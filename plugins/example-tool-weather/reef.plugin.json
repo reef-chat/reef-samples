@@ -1,0 +1,29 @@
+{
+  "id": "com.example.reef-tool-weather",
+  "manifest_version": "2",
+  "version": "1.0.0",
+  "name": "Open-Meteo weather",
+  "description": "Hourly forecast lookup via the public Open-Meteo API.",
+  "license": "Apache-2.0",
+  "homepage": "https://open-meteo.com/",
+  "endpoint_tools": [
+    {
+      "name": "get_hourly_forecast",
+      "description": "Return the next 24h forecast (temperature, precipitation, wind) for a latitude and longitude.",
+      "endpoint": "https://api.open-meteo.com/v1/forecast",
+      "method": "GET",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "latitude": { "type": "number", "description": "Latitude in decimal degrees" },
+          "longitude": { "type": "number", "description": "Longitude in decimal degrees" },
+          "timezone": { "type": "string", "description": "IANA timezone, e.g. Europe/Bucharest" }
+        },
+        "required": ["latitude", "longitude"]
+      }
+    }
+  ],
+  "declared_capabilities": {
+    "network_domains": ["api.open-meteo.com"]
+  }
+}

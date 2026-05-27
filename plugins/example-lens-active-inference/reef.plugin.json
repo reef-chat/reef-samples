@@ -1,0 +1,23 @@
+{
+  "id": "com.example.reef-lens-active-inference",
+  "manifest_version": "2",
+  "version": "0.1.0",
+  "name": "Active inference lens",
+  "description": "Lens rows framed around active inference / free-energy principles.",
+  "license": "MIT",
+  "lens_tools": [
+    {
+      "category": "query_template",
+      "id": "free_energy_minimization",
+      "call_when": "User invokes Friston / active inference / free energy framings.",
+      "query_template": "Discuss the topic in terms of variational free-energy minimization vs Bayesian brain accounts."
+    },
+    {
+      "category": "verification_class",
+      "id": "fep_falsifiability",
+      "call_when": "An FEP-style claim needs to be made testable.",
+      "role": "Translate the claim into a falsifiable prediction with a measurable signal.",
+      "example_tools": ["literature_search", "predictive_coding_check"]
+    }
+  ]
+}
