@@ -25,6 +25,20 @@ Reef downloads the default-branch source archive and expects `reef.plugin.json` 
 
 **Local install without git:** from inside the plugin folder, `tar -czf plugin.tar.gz -C . .` and use **Install → Local**.
 
+**Fastest install (mobile):** open the plugin on [reefchat.io/plugins](https://reefchat.io/plugins), tap **Copy install link**, then paste in Reef under **Settings → Plugins → Install plugin** (Remote → Git URL).
+
+## Publishing official repos
+
+Each sample maps to `github.com/reef-chat/reef-plugin-*` (plugin folder = repo root). From the monorepo root:
+
+```bash
+node scripts/publish-plugin-repos.mjs              # dry run
+node scripts/publish-plugin-repos.mjs --execute    # create/push via gh CLI
+node scripts/publish-plugin-repos.mjs --slug example-prompt-concise --execute
+```
+
+Verify Remote install in Reef with the copied HTTPS URL before enabling the landing **Copy install link** for that plugin.
+
 ## Example plugins
 
 | Folder                                                             | Install as                        | Sections                                     |

@@ -1,0 +1,16 @@
+{
+  "slugs": [
+    "starter-research",
+    "example-dynamic-tools-files",
+    "example-dynamic-tools-inline",
+    "example-lens-active-inference",
+    "example-profile-research",
+    "example-prompt-concise",
+    "example-prompt-personas",
+    "example-skill-coding",
+    "example-skill-grocery",
+    "example-tool-fetch-page",
+    "example-tool-weather",
+    "example-voice-native"
+  ]
+}
